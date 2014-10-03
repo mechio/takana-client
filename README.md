@@ -1,6 +1,6 @@
 ## Takana Browser Client
 
-This is the browser client for takana. It needs to be included inside your `<head>` tag of any page that you want to live update:
+This is the browser client for [takana](http://usetakana.com). It needs to be included inside your `<head>` tag of any page that you want to live update:
 
 ```html
 <script type="text/javascript" src="http://localhost:48626/takana.js"></script>

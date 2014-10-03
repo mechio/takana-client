@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "description": "Client side javascript for takana",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "karma-coffee-preprocessor": "^0.2.1"
+  },
   "scripts": {
     "test": "node_modules/karma/bin/karma start"
   },
