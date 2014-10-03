@@ -1,0 +1,1 @@
+node_modules/browserify/bin/cmd.js -t coffeeify lib/index.coffee --standalone takana > dist/takana.js

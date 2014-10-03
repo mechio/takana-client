@@ -2,9 +2,11 @@ class FakeWebSocket
   @SOCKET = null
   OPEN: 1
 
-  constructor: (@url) ->
+  constructor: (@options) ->
     @constructor.SOCKET = @
-
+    @host = @options.host
+    
+  send: ->
   # 
   # For tests
   #
@@ -25,23 +27,3 @@ setupFakeWebSocket = ->
 
   afterEach ->
     WebSocket = @websocket
-
-setupScriptTag = ->
-  injectScriptTag = (options={}) ->
-    options.src         ||= 'http://localhost:48626/takana.js'
-
-    el = document.createElement("script")
-    el.setAttribute('src', options.src)
-    el.setAttribute('id', 'test-script-tag')
-    document.body.appendChild(el)
-
-    el
-
-  removeScriptTag = -> 
-    @scriptTag.parentNode.removeChild(@scriptTag) if @scriptTag && @scriptTag.parentNode
-
-  beforeEach -> 
-    @scriptTag = injectScriptTag()
-
-  afterEach ->
-    removeScriptTag()

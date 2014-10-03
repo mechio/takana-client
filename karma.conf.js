@@ -16,7 +16,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'js/takana.js',
+      'dist/takana.js',
       'test/support.coffee',
       'test/*.coffee',
       'test/css/test.css'

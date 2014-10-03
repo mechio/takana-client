@@ -1,28 +1,19 @@
 {
   "name": "takana-client",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Client side javascript for takana",
-  "main": "index.js",
-  "dependencies": {
-    "karma-coffee-preprocessor": "^0.2.1"
-  },
+  "main": "dist/takana.js",
   "scripts": {
     "test": "node_modules/karma/bin/karma start"
   },
   "devDependencies": {
-    "grunt": "~0.4.2",
-    "grunt-cli": "~0.1.13",
-    "bower": "^1.3.11",
     "karma": "~0.12.0",
-    "grunt-karma": "~0.8",
-    "grunt-wrap": "~0.3.0",
-    "grunt-contrib-coffee": "~0.10.0",
-    "grunt-contrib-watch": "~0.5.3",
     "karma-mocha": "~0.1.1",
     "karma-chai-sinon": "~0.1.1",
-    "grunt-contrib-concat": "~0.3.0",
-    "grunt-contrib-copy": "~0.5.0",
-    "karma-phantomjs-launcher": "^0.1.4"
+    "karma-phantomjs-launcher": "^0.1.4",
+    "karma-coffee-preprocessor": "^0.2.1",
+    "coffeeify": "^0.7.0",
+    "browserify": "^6.0.2"
   },
   "repository": {
     "type": "git",
@@ -36,5 +27,8 @@
   "bugs": {
     "url": "https://github.com/mechio/takana-client/issues"
   },
-  "homepage": "https://github.com/mechio/takana-client"
+  "homepage": "https://github.com/mechio/takana-client",
+  "dependencies": {
+    "microevent": "^1.0.0"
+  }
 }

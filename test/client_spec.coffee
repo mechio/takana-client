@@ -1,38 +1,29 @@
 describe 'Takana.Client', ->
 
   describe 'start', ->
-    setupScriptTag()
-
     context 'initialize configuration', ->
       beforeEach ->
-        @client = Takana.Client.start()
+        @client = new takana.Client()
 
-      it 'should get the project name from the script tag', ->
-        expect(@client.projectName).to.eql('default')
-
-      it 'should set the port', ->
-        expect(Takana.Config.port).to.eql(48626)
-
-      it 'should set hostname based on scriptTag src', ->
-        expect(Takana.Config.hostname).to.eql('localhost')
+      it 'should set the host', ->
+        expect(@client.host).to.eql('localhost:48626')
 
     context 'WebSocket', ->
-      setupFakeWebSocket()
-
-      it 'should connect to the Takana server', ->
-        @client = Takana.Client.start()
-        expect(Takana.Server.instance.socket.readyState).to.equal(WebSocket.OPEN)
-
       describe 'once connected', ->
-        beforeEach ->
-          @client = Takana.Client.start()
-          @socket = FakeWebSocket.SOCKET
-          @socket.send = sinon.spy()
-          @socket._open()
+
+        setupFakeWebSocket()
+        beforeEach (done) ->
+          @client = new takana.Client()
+          @client.run => done()
+          @client.server.socket.send = sinon.spy()
+          @client.server.socket._open()
+
+        it 'should connect to the Takana server', ->
+         expect(@client.server.socket.readyState).to.equal(WebSocket.OPEN)
 
         it 'should send stylesheet:resolve message', ->
-          expect(@socket.send.calledOnce).to.equal(true)
-          expect(@socket.send.firstCall.args[0]).to.include('stylesheet:resolve')
+          expect(@client.server.socket.send.calledOnce).to.equal(true)
+          expect(@client.server.socket.send.firstCall.args[0]).to.include('stylesheet:resolve')
 
         it 'should create a project instance', ->
-          expect(@client.project.name).to.equal('default')
+          expect(should.exist(@client.project))
