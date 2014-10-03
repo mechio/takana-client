@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "description": "Live edit SCSS and CSS files from Sublime Text",
   "main": "index.js",
-  "dependencies": {
+  "dependencies": {},
+  "scripts": {
+    "test": "node_modules/karma/bin/karma start"
   },
   "devDependencies": {
     "grunt": "~0.4.2",
@@ -18,10 +20,7 @@
     "karma-chai-sinon": "~0.1.1",
     "grunt-contrib-concat": "~0.3.0",
     "grunt-contrib-copy": "~0.5.0",
-    "karma-safari-launcher": "~0.1.1"
-  },
-  "scripts": {
-    "test": "mocha"
+    "karma-phantomjs-launcher": "^0.1.4"
   },
   "repository": {
     "type": "git",

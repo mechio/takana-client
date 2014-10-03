@@ -82,7 +82,7 @@ describe('Takana.Client', function() {
         return expect(this.client.scriptTag).to.eql(this.scriptTag);
       });
       it('should get the project name from the script tag', function() {
-        return expect(this.client.projectName).to.eql('testProject');
+        return expect(this.client.projectName).to.eql('default');
       });
       it('should set the port', function() {
         return expect(Takana.Config.port).to.eql(48626);
@@ -109,7 +109,7 @@ describe('Takana.Client', function() {
           return expect(this.socket.send.firstCall.args[0]).to.include('stylesheet:resolve');
         });
         return it('should create a project instance', function() {
-          return expect(this.client.project.name).to.equal('testProject');
+          return expect(this.client.project.name).to.equal('default');
         });
       });
     });

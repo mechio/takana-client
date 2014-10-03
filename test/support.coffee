@@ -28,11 +28,9 @@ setupFakeWebSocket = ->
 
 setupScriptTag = ->
   injectScriptTag = (options={}) ->
-    options.projectName ||= 'testProject'
     options.src         ||= 'http://localhost:48626/takana.js'
 
     el = document.createElement("script")
-    el.setAttribute('data-project', options.projectName)
     el.setAttribute('src', options.src)
     el.setAttribute('id', 'test-script-tag')
     document.body.appendChild(el)

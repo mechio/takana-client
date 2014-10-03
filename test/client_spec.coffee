@@ -7,11 +7,8 @@ describe 'Takana.Client', ->
       beforeEach ->
         @client = Takana.Client.start()
 
-      it 'should find the Takana script tag', ->
-        expect(@client.scriptTag).to.eql(@scriptTag)
-
       it 'should get the project name from the script tag', ->
-        expect(@client.projectName).to.eql('testProject')
+        expect(@client.projectName).to.eql('default')
 
       it 'should set the port', ->
         expect(Takana.Config.port).to.eql(48626)
@@ -38,4 +35,4 @@ describe 'Takana.Client', ->
           expect(@socket.send.firstCall.args[0]).to.include('stylesheet:resolve')
 
         it 'should create a project instance', ->
-          expect(@client.project.name).to.equal('testProject')
+          expect(@client.project.name).to.equal('default')
