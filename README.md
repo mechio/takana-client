@@ -1,6 +1,14 @@
-takana
-======
+## Takana Browser Client
 
-Takana
+This is the browser client for takana. It needs to be included inside your `<head>` tag of any page that you want to live update:
 
-![](https://api.travis-ci.com/mechio/takana.png?token=6GpqfNU3uWoTskgz3zwc)
+```html
+<script type="text/javascript" src="http://localhost:48626/takana.js"></script>
+<script type="text/javascript">
+  takana.run(
+    url: 'ws://localhost:48626'
+  )
+</script>
+```
+
+For more information about takana, please refer to the [takana repository](https://github.com/mechio/takana).
