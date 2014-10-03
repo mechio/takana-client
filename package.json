@@ -1,7 +1,7 @@
 {
   "name": "takana-client",
   "version": "0.0.1",
-  "description": "Live edit SCSS and CSS files from Sublime Text",
+  "description": "Client side javascript for takana",
   "main": "index.js",
   "dependencies": {},
   "scripts": {
@@ -24,7 +24,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mechio/takana"
+    "url": "https://github.com/mechio/takana-client"
   },
   "keywords": [
     "SCSS"
@@ -32,7 +32,7 @@
   "author": "Mechio",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mechio/takana/issues"
+    "url": "https://github.com/mechio/takana-client/issues"
   },
-  "homepage": "https://github.com/mechio/takana"
+  "homepage": "https://github.com/mechio/takana-client"
 }

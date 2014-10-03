@@ -1,6 +1,5 @@
 class Takana.Client
   constructor: ->
-    @scriptTag              = document.querySelectorAll("script[data-project]")[0]
     @projectName            = 'default'#@scriptTag.getAttribute("data-project")
     Takana.Config.port      = 48626
     Takana.Config.hostname  = 'localhost'
