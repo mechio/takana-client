@@ -18,7 +18,7 @@ exports.Project     = Project
 exports.Client      = Client 
 
 exports.run = (options) ->
-  client = new takana.Client(options)
+  client = new Client(options)
   client.run()
 
 
