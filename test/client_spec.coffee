@@ -3,7 +3,7 @@ describe 'Takana.Client', ->
   describe 'start', ->
     context 'initialize configuration', ->
       beforeEach ->
-        @client = new takana.Client()
+        @client = new takanaClient.Client()
 
       it 'should set the host', ->
         expect(@client.host).to.eql('localhost:48626')
@@ -13,7 +13,7 @@ describe 'Takana.Client', ->
 
         setupFakeWebSocket()
         beforeEach (done) ->
-          @client = new takana.Client()
+          @client = new takanaClient.Client()
           @client.run => done()
           @client.server.socket.send = sinon.spy()
           @client.server.socket._open()

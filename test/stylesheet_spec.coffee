@@ -6,7 +6,7 @@ describe 'Stylesheet', ->
 
 	describe 'initialize', ->
 		it 'should set @el, @href, @id and @documentStyleSheet on initialize', ->
-			@styleSheet = new takana.Stylesheet
+			@styleSheet = new takanaClient.Stylesheet
 				server: 						@server
 				documentStyleSheet: document.styleSheets[0]
 				id: 								1
@@ -17,7 +17,7 @@ describe 'Stylesheet', ->
 
 	describe 'startListening', ->
 		beforeEach ->
-			@styleSheet = new takana.Stylesheet
+			@styleSheet = new takanaClient.Stylesheet
 				server: 						@server
 				documentStyleSheet: document.styleSheets[0]
 				id: 								1

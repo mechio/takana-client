@@ -4,7 +4,7 @@ describe 'Project', ->
 		@bind   = @server.bind = sinon.stub()
 		@send   = @server.send = sinon.stub()
 
-		@project = new takana.Project(server: @server)
+		@project = new takanaClient.Project(server: @server)
 
 	it 'should find all document stylesheets loaded via http and file protocols', ->
 		# create a local stylesheet
