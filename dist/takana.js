@@ -41,7 +41,7 @@ exports.Client = Client;
 
 exports.run = function(options) {
   var client;
-  client = new takana.Client(options);
+  client = new Client(options);
   return client.run();
 };
 
@@ -85,7 +85,8 @@ Project = (function() {
     this.documentStyleSheets.forEach((function(_this) {
       return function(styleSheet) {
         return _this.server.send("stylesheet:resolve", {
-          href: styleSheet.href
+          href: styleSheet.href,
+          takanaHref: styleSheet.ownerNode && styleSheet.ownerNode.getAttribute('takana-href')
         });
       };
     })(this));
