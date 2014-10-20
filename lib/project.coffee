@@ -27,7 +27,7 @@ class Project
           stylesheet.startListening()
 
     @documentStyleSheets.forEach (styleSheet) => 
-      @server.send "stylesheet:resolve", href: styleSheet.href
+      @server.send "stylesheet:resolve", href: styleSheet.href, takanaHref: styleSheet.ownerNode && styleSheet.ownerNode.getAttribute('takana-href')
     
 
 module.exports = Project
